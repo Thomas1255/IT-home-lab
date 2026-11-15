@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-Initial setup. Oracle VirtualBox installation has been confirmed by the lab owner. VM startup and lab configurations have not yet been verified. Technologies listed below are planned; they do not represent completed experience.
+Initial setup. Oracle VirtualBox is installed and the DC01 VM has been created with the Windows Server 2025 evaluation ISO attached. The VM is powered off; Windows installation, VM startup, and isolated networking have not yet been verified. Technologies listed below are planned; they do not represent completed experience.
 
 ## Planned technologies
 

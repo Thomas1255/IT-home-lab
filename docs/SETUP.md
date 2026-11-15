@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: Initial setup. Oracle VirtualBox installation confirmed by the lab owner; no lab VMs or network configuration verified yet.
+Status: DC01 VM created and powered off, as verified in the lab owner's screenshot. Windows Server installation and isolated networking are pending.
 
 ## Host inventory
 
@@ -14,14 +14,29 @@ Initial inventory reported by the lab owner; not independently inspected:
 | Physical storage | Two SSDs and one HDD |
 | Hardware virtualization | Enabled, as observed in Task Manager |
 
-Oracle VirtualBox is installed, as confirmed by the lab owner. Its version and a successful VM startup have not yet been recorded. The intended lab SSD and its available space remain unspecified.
+Oracle VirtualBox is installed, as confirmed by the lab owner. Read-only inspection of the installed executable reports version 7.2.22.175245. A successful VM startup has not yet been verified. The intended lab SSD and its available space remain unspecified.
 
 ## Lab design
 
-Oracle VirtualBox selected and installed as the hypervisor. VM resources and isolated networking remain to be configured.
+Oracle VirtualBox is the hypervisor. The following DC01 settings were verified in the lab owner's screenshots:
+
+| Setting | Observed value |
+| --- | --- |
+| VM name and state | DC01, Powered Off |
+| Memory | 6144 MB |
+| Virtual processors | 2 |
+| Firmware | EFI enabled |
+| Virtual disk | DC01.vdi, 80 GB; full preallocation unchecked in the creation wizard |
+| Optical drive | Windows Server 2025 evaluation x64 ISO attached |
+| VirtualBox OS profile | Windows Server 2022 (64-bit); this profile does not identify an installed OS |
+| Network adapter 1 | Intel PRO/1000 MT Desktop, NAT; isolation pending |
+
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. Planned next change: set the only enabled adapter to Internal Network named LabNet before first boot. This change is not yet verified.
 
 ## Verified setup steps
 
-- Oracle VirtualBox installation: lab owner reported installation complete. Application version and VM operation are not yet verified.
+- Oracle VirtualBox installation: lab owner reported installation complete; executable version inspected separately.
+- Windows Server evaluation ISO download: confirmed by the lab owner and attached image visible in the DC01 storage summary.
+- DC01 creation: screenshots show the registered, powered-off VM with the resources listed above. No Windows installation or boot success is claimed.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
