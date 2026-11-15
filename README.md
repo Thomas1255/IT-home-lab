@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-Planning. No lab installations or configurations have been verified yet. Technologies listed below are planned; they do not represent completed experience.
+Initial setup. Oracle VirtualBox installation has been confirmed by the lab owner. VM startup and lab configurations have not yet been verified. Technologies listed below are planned; they do not represent completed experience.
 
 ## Planned technologies
 
