@@ -22,7 +22,8 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 
 | Setting | Observed value |
 | --- | --- |
-| VirtualBox VM name | DC01; Windows guest computer name not yet verified or configured |
+| VirtualBox VM name | DC01 |
+| Windows computer name / membership | DC01 / WORKGROUP, verified in Server Manager |
 | Installed operating system | Windows Server 2025 Standard Evaluation with Desktop Experience |
 | Installed version/build | 24H2, OS build 26100.32230, verified using winver |
 | Memory | 6144 MB |
@@ -48,5 +49,10 @@ The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server
 - Windows installation: screenshots show the empty 80 GB virtual installation target, initial Administrator password setup, and successful sign-in to the graphical desktop with Server Manager.
 - Edition verification: About Windows identifies Windows Server 2025 Standard Evaluation, version 24H2, OS build 26100.32230. The graphical desktop confirms Desktop Experience. Passwords were not collected or recorded.
 - Recovery checkpoint: `01-Clean-Server-Install` exists in the VirtualBox snapshot tree, verified by screenshot. Restore testing is not claimed.
+- Windows computer name: Server Manager > Local Server screenshot shows Computer name DC01 and Workgroup WORKGROUP. This verifies the hostname; it does not establish an Active Directory domain or domain controller.
+
+## Outstanding initial setup
+
+The latest Server Manager screenshot shows DHCP-enabled IPv4 configuration, Windows not activated, and no recorded update checks or installed updates in that view. Exact IP configuration, successful activation, and servicing remain to be verified before Active Directory setup.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
