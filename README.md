@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both active VirtualBox adapters use the isolated Internal Network LabNet; screenshots verify static addresses 10.10.10.10/24 and 10.10.10.20/24, respectively. DC01's duplicate-address state cleared on a subsequent check, and DC01-to-client ping succeeds with 0% loss. A fresh client-to-server test remains pending. DC01 updates are complete by the lab owner's report; client updates are deferred. Active Directory is not configured yet.
+DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both active VirtualBox adapters use the isolated Internal Network LabNet; screenshots verify static addresses 10.10.10.10/24 and 10.10.10.20/24, respectively. After troubleshooting DC01's duplicate-address state, ping tests initiated from each VM succeed with 4/4 replies and 0% loss. DC01 updates are complete by the lab owner's report; client updates are deferred. Active Directory is not configured yet.
 
 ## Planned technologies
 
@@ -25,11 +25,15 @@ DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both act
 
 Screenshots show installation, virtual hardware, recovery snapshots, addressing, and an actual network troubleshooting case. Evidence captions distinguish successful tests from failures and self-tests.
 
-![Both lab VMs powered off with client baseline snapshot visible](docs/images/baseline-snapshots.png)
+![Lab VMs running with client baseline snapshot visible](docs/images/baseline-snapshots.png)
 
 DC01's address is now Preferred, and its ping to WIN11-01 returns four replies with 0% loss:
 
-![DC01 static configuration and successful ping to WIN11-01](docs/images/server-to-client-success.png)
+![DC01 successfully pings WIN11-01](docs/images/server-to-client-success.png)
+
+WIN11-01 also successfully pings DC01 with 0% loss:
+
+![WIN11-01 successfully pings DC01](docs/images/client-to-server-success.png)
 
 ## Lab practices
 

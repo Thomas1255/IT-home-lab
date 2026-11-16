@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: DC01 and WIN11-01 are installed, graphical sign-in and Active activation states are verified in screenshots, and both Windows computer names match their VM names. Baseline snapshots exist for both VMs. Server update completion is reported by the lab owner; client updates are deferred at the lab owner's request. Both adapters are now verified on isolated LabNet, and static addresses are verified. Active Directory and a fresh client-to-server ping remain pending.
+Status: DC01 and WIN11-01 are installed, graphical sign-in and Active activation states are verified in screenshots, and both Windows computer names match their VM names. Baseline snapshots exist for both VMs. Server update completion is reported by the lab owner; client updates are deferred at the lab owner's request. Both adapters are now verified on isolated LabNet, and static addresses are verified. Ping tests in both directions are verified with 0% loss; Active Directory and DNS services remain pending.
 
 ## Host inventory
 
@@ -38,7 +38,7 @@ Oracle VirtualBox is the hypervisor. The following DC01 lab settings were verifi
 | Default gateway | None |
 | Preferred DNS | 10.10.10.10; local DNS service not yet installed |
 
-The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. A later guest ipconfig /all screenshot verifies the static IPv4 address, mask, DNS, DHCP disabled, and no gateway. DC01-to-client ping is now verified with four replies and 0% loss; a fresh client-to-server ping and DNS service operation remain unverified.
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. A later guest ipconfig /all screenshot verifies the static IPv4 address, mask, DNS, DHCP disabled, and no gateway. DC01-to-client ping is now verified with four replies and 0% loss; client-to-server ping is verified too; DNS service operation remains unverified.
 
 ## Recovery checkpoint
 
@@ -65,7 +65,7 @@ The learner downloaded the client ISO. A VirtualBox Manager screenshot verifies 
 | Network adapter 1 | Internal Network LabNet, confirmed by current VirtualBox configuration inspection |
 | Static IPv4 / mask / DNS | 10.10.10.20 / 255.255.255.0 / 10.10.10.10; DHCP No, gateway blank |
 
-The WIN11-01 screenshots verify successful graphical sign-in and About Windows identifies Windows 11 Enterprise Evaluation, version 26H2, OS build 26300.9457. Settings verifies labadmin as a Local Account, Activation state Active, and device name WIN11-01. The client baseline snapshot exists; DC01-to-client connectivity is verified; the fresh reverse ping is pending. Client updates are deferred at the lab owner's request; no patch-completion claim is made. The client is now on isolated LabNet.
+The WIN11-01 screenshots verify successful graphical sign-in and About Windows identifies Windows 11 Enterprise Evaluation, version 26H2, OS build 26300.9457. Settings verifies labadmin as a Local Account, Activation state Active, and device name WIN11-01. The client baseline snapshot exists; DC01-to-client connectivity is verified; the fresh reverse ping is verified with 0% loss. Client updates are deferred at the lab owner's request; no patch-completion claim is made. The client is now on isolated LabNet.
 
 ## Verified setup steps
 
@@ -84,10 +84,10 @@ The WIN11-01 screenshots verify successful graphical sign-in and About Windows i
 
 ## Outstanding initial setup
 
-A Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation activation state is Active. The lab owner subsequently reported that DC01 finished updating; a final Windows Update page, pending-restart status, and post-update build were not independently inspected. Temporary NAT/automatic-address maintenance was instructed, and the learner supplied a Microsoft website screenshot as a connectivity check; exact temporary server adapter settings were not captured. Client activation and both baseline snapshots are now verified. LabNet attachments and both static configurations have now been verified; a fresh client-to-server ping remains pending. Client updates are deferred at the lab owner's request. Keep Windows Firewall enabled and port-forwarding rules empty.
+A Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation activation state is Active. The lab owner subsequently reported that DC01 finished updating; a final Windows Update page, pending-restart status, and post-update build were not independently inspected. Temporary NAT/automatic-address maintenance was instructed, and the learner supplied a Microsoft website screenshot as a connectivity check; exact temporary server adapter settings were not captured. Client activation and both baseline snapshots are now verified. LabNet attachments and both static configurations have now been verified; client-to-server ping is now verified with 4/4 replies and 0% loss. Client updates are deferred at the lab owner's request. Keep Windows Firewall enabled and port-forwarding rules empty.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
 
 ## Restored lab addressing and connectivity evidence
 
-Current VirtualBox XML inspection verifies both active adapter 1 attachments use Internal Network LabNet and distinct MAC addresses. Guest screenshots verify both static addresses and DNS settings. The server address was temporarily marked Duplicate, but a later screenshot shows Preferred and DC01 pinging WIN11-01 successfully (4/4 replies, 0% loss). Client firewall rules were configured by learner report; exact contents are not independently inspected. The client's latest successful ping is a self-test of 10.10.10.20; a fresh ping from WIN11-01 to 10.10.10.10 remains pending. See [screenshot evidence](EVIDENCE.md) and [troubleshooting record](TROUBLESHOOTING.md).
+Current VirtualBox XML inspection verifies both active adapter 1 attachments use Internal Network LabNet and distinct MAC addresses. Guest screenshots verify both static addresses and DNS settings. The server address was temporarily marked Duplicate, but a later screenshot shows Preferred and DC01 pinging WIN11-01 successfully (4/4 replies, 0% loss). Client firewall rules were configured by learner report; exact contents are not independently inspected. New screenshots verify both DC01 pinging 10.10.10.20 and WIN11-01 pinging 10.10.10.10, each with 4/4 replies and 0% loss. The earlier self-ping was not counted as remote verification. See [screenshot evidence](EVIDENCE.md) and [troubleshooting record](TROUBLESHOOTING.md).

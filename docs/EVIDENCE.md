@@ -22,7 +22,7 @@ The VM summary verifies 8192 MB RAM, 2 CPUs, TPM 2.0, EFI, Secure Boot, an 80 GB
 
 ## Recovery snapshots
 
-The client snapshot tree shows 01-Clean-Client-Install. The machine list also shows DC01 associated with 01-Clean-Server-Install; both VMs are powered off. These screenshots establish snapshot existence, not successful restoration.
+The replacement screenshot supplied by the lab owner shows the client snapshot 01-Clean-Client-Install and DC01 associated with 01-Clean-Server-Install. Both lab VMs are running in this later capture. Snapshot existence is verified; restoration is untested. The older screenshot with the unrelated university VM label has been replaced in the current gallery.
 
 ![Baseline snapshots](images/baseline-snapshots.png)
 
@@ -50,10 +50,20 @@ DC01 initially reports 10.10.10.10 Duplicate and an additional 169.254 address. 
 
 A subsequent DC01 screenshot shows 10.10.10.10 Preferred and four successful replies from WIN11-01 at 10.10.10.20 with 0% loss. Adapter disable/enable had been suggested; the learner did not explicitly identify which action restored the address, so causation is not claimed.
 
+![Server address recovered to Preferred](images/server-ip-recovered.png)
+
+Fresh server-to-client test: 4 sent, 4 received, 0% loss.
+
 ![Server-to-client ping succeeds](images/server-to-client-success.png)
 
-## Verification limit: a self-ping is not a remote connectivity test
+## Client-to-server success
 
-This client screenshot shows the earlier failed ping to the server, followed by a successful ping to its own address 10.10.10.20. The self-ping verifies local response only. A new WIN11-01 ping to 10.10.10.10 is still required before claiming successful tests initiated in both directions.
+The new client screenshot shows ping 10.10.10.10 receiving four replies from DC01 with 0% loss. Together with the server test above, this verifies successful ICMP tests initiated in both directions. DNS, domain membership, and application services have not been tested yet.
+
+![Client-to-server ping succeeds](images/client-to-server-success.png)
+
+## Earlier verification limit: a self-ping is not a remote connectivity test
+
+This historical client screenshot shows the failed ping to the server followed by a successful ping to its own address 10.10.10.20. The self-ping verified local response only; the subsequent remote test above now supplies the missing client-to-server evidence.
 
 ![Client self-ping and earlier failed remote test](images/client-self-ping.png)
