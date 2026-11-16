@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-DC01 runs Windows Server 2025 Standard Evaluation with Desktop Experience, and WIN11-01 runs Windows 11 Enterprise Evaluation. Both graphical sign-ins, Windows computer names, Active activation states, and baseline snapshots were verified in screenshots. DC01 updates are complete by the lab owner's report; client updates are deferred. Restoration of isolated LabNet networking remains pending. Active Directory and inter-VM connectivity are not configured or verified yet. Technologies listed below describe the planned full environment.
+DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both active VirtualBox adapters use the isolated Internal Network LabNet; screenshots verify static addresses 10.10.10.10/24 and 10.10.10.20/24, respectively. DC01's duplicate-address state cleared on a subsequent check, and DC01-to-client ping succeeds with 0% loss. A fresh client-to-server test remains pending. DC01 updates are complete by the lab owner's report; client updates are deferred. Active Directory is not configured yet.
 
 ## Planned technologies
 
@@ -19,6 +19,17 @@ DC01 runs Windows Server 2025 Standard Evaluation with Desktop Experience, and W
 
 - [Setup record](docs/SETUP.md)
 - [Troubleshooting knowledge base](docs/TROUBLESHOOTING.md)
+- [Screenshot evidence gallery](docs/EVIDENCE.md)
+
+## Evidence of work
+
+Screenshots show installation, virtual hardware, recovery snapshots, addressing, and an actual network troubleshooting case. Evidence captions distinguish successful tests from failures and self-tests.
+
+![Both lab VMs powered off with client baseline snapshot visible](docs/images/baseline-snapshots.png)
+
+DC01's address is now Preferred, and its ping to WIN11-01 returns four replies with 0% loss:
+
+![DC01 static configuration and successful ping to WIN11-01](docs/images/server-to-client-success.png)
 
 ## Lab practices
 
