@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: DC01 VM created and its adapter set to Internal Network LabNet, as verified in the lab owner's screenshots. Windows Server installation and guest network addressing are pending.
+Status: Windows Server 2025 Standard Evaluation with Desktop Experience installed and first sign-in verified in screenshots. DC01 uses Internal Network LabNet. Guest addressing, Active Directory, and client deployment remain pending.
 
 ## Host inventory
 
@@ -14,7 +14,7 @@ Initial inventory reported by the lab owner; not independently inspected:
 | Physical storage | Two SSDs and one HDD |
 | Hardware virtualization | Enabled, as observed in Task Manager |
 
-Oracle VirtualBox is installed, as confirmed by the lab owner. Read-only inspection of the installed executable reports version 7.2.22.175245. A successful VM startup has not yet been verified. The intended lab SSD and its available space remain unspecified.
+Oracle VirtualBox is installed, as confirmed by the lab owner. Read-only inspection of the installed executable reports version 7.2.22.175245. Screenshots verify successful DC01 boot and graphical Windows sign-in. The intended lab SSD and its available space remain unspecified.
 
 ## Lab design
 
@@ -22,7 +22,9 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 
 | Setting | Observed value |
 | --- | --- |
-| VM name and state | DC01, Powered Off |
+| VirtualBox VM name | DC01; Windows guest computer name not yet verified or configured |
+| Installed operating system | Windows Server 2025 Standard Evaluation with Desktop Experience |
+| Installed version/build | 24H2, OS build 26100.32230, verified using winver |
 | Memory | 6144 MB |
 | Virtual processors | 2 |
 | Firmware | EFI enabled |
@@ -31,13 +33,15 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 | VirtualBox OS profile | Windows Server 2022 (64-bit); this profile does not identify an installed OS |
 | Network adapter 1 | Intel PRO/1000 MT Desktop, Internal Network named LabNet |
 
-The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. The latest screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing, connectivity, and Windows Server installation remain unverified.
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing and connectivity remain unverified. No baseline snapshot has been confirmed yet.
 
 ## Verified setup steps
 
 - Oracle VirtualBox installation: lab owner reported installation complete; executable version inspected separately.
 - Windows Server evaluation ISO download: confirmed by the lab owner and attached image visible in the DC01 storage summary.
-- DC01 creation: screenshots show the registered, powered-off VM with the resources listed above. No Windows installation or boot success is claimed.
+- DC01 creation: screenshots show the registered VM with the resources listed above.
 - DC01 network attachment: screenshot verifies adapter 1 uses Internal Network LabNet. No guest IP configuration or connectivity is claimed.
+- Windows installation: screenshots show the empty 80 GB virtual installation target, initial Administrator password setup, and successful sign-in to the graphical desktop with Server Manager.
+- Edition verification: About Windows identifies Windows Server 2025 Standard Evaluation, version 24H2, OS build 26100.32230. The graphical desktop confirms Desktop Experience. Passwords were not collected or recorded.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.

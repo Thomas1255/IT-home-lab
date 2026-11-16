@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-Initial setup. Oracle VirtualBox is installed and the DC01 VM has been created with the Windows Server 2025 evaluation ISO attached. Its network adapter uses the isolated Internal Network LabNet. Windows installation, VM startup, IP addressing, and connectivity have not yet been verified. Technologies listed below are planned; they do not represent completed experience.
+Windows Server 2025 Standard Evaluation with Desktop Experience is installed in the DC01 VM. First sign-in and version 24H2, OS build 26100.32230, were verified in screenshots. Its network adapter uses the isolated Internal Network LabNet. Guest IP addressing, connectivity, and Active Directory configuration remain pending. Technologies listed below describe the planned full environment.
 
 ## Planned technologies
 
