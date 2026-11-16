@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-Windows Server 2025 Standard Evaluation with Desktop Experience is installed in the DC01 VM. First sign-in and version 24H2, OS build 26100.32230, were verified in screenshots. Its network adapter uses the isolated Internal Network LabNet. Guest IP addressing, connectivity, and Active Directory configuration remain pending. Technologies listed below describe the planned full environment.
+DC01 runs Windows Server 2025 Standard Evaluation with Desktop Experience, and WIN11-01 runs Windows 11 Enterprise Evaluation. Both graphical sign-ins were verified in screenshots. DC01 activation is verified; its updates are complete by the lab owner's report. Client updates are deferred. Client activation and restoration of isolated LabNet networking remain pending. Active Directory and inter-VM connectivity are not configured or verified yet. Technologies listed below describe the planned full environment.
 
 ## Planned technologies
 
