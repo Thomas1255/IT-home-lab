@@ -33,7 +33,11 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 | VirtualBox OS profile | Windows Server 2022 (64-bit); this profile does not identify an installed OS |
 | Network adapter 1 | Intel PRO/1000 MT Desktop, Internal Network named LabNet |
 
-The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing and connectivity remain unverified. No baseline snapshot has been confirmed yet.
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing and connectivity remain unverified.
+
+## Recovery checkpoint
+
+The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server-Install`, with Current State beneath it, after Windows installation and edition verification. Snapshot restoration has not been tested.
 
 ## Verified setup steps
 
@@ -43,5 +47,6 @@ The ISO was downloaded and used from its existing location outside the Git check
 - DC01 network attachment: screenshot verifies adapter 1 uses Internal Network LabNet. No guest IP configuration or connectivity is claimed.
 - Windows installation: screenshots show the empty 80 GB virtual installation target, initial Administrator password setup, and successful sign-in to the graphical desktop with Server Manager.
 - Edition verification: About Windows identifies Windows Server 2025 Standard Evaluation, version 24H2, OS build 26100.32230. The graphical desktop confirms Desktop Experience. Passwords were not collected or recorded.
+- Recovery checkpoint: `01-Clean-Server-Install` exists in the VirtualBox snapshot tree, verified by screenshot. Restore testing is not claimed.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
