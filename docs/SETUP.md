@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: DC01 and WIN11-01 are installed, graphical sign-in and Active activation states are verified in screenshots, and both Windows computer names match their VM names. Server update completion is reported by the lab owner; client updates are deferred at the lab owner's request. Client baseline snapshot, restored lab isolation, Active Directory, and inter-VM connectivity remain pending.
+Status: DC01 and WIN11-01 are installed, graphical sign-in and Active activation states are verified in screenshots, and both Windows computer names match their VM names. Baseline snapshots exist for both VMs. Server update completion is reported by the lab owner; client updates are deferred at the lab owner's request. Restored lab isolation, Active Directory, and inter-VM connectivity remain pending.
 
 ## Host inventory
 
@@ -44,6 +44,8 @@ The ISO was downloaded and used from its existing location outside the Git check
 
 The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server-Install`, with Current State beneath it, after Windows installation and edition verification. Snapshot restoration has not been tested.
 
+A later screenshot verifies the client snapshot `01-Clean-Client-Install` with Current State beneath it. Both DC01 and WIN11-01 are shown Powered Off in that screenshot. The client baseline includes completed sign-in, verified hostname and activation, with Windows updates deferred. Neither snapshot has been restore-tested.
+
 ## Windows 11 workstation
 
 The learner downloaded the client ISO. A VirtualBox Manager screenshot verifies the new VM's configuration:
@@ -62,7 +64,7 @@ The learner downloaded the client ISO. A VirtualBox Manager screenshot verifies 
 | Optical drive | Client Enterprise Evaluation x64 English ISO, filename includes CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us |
 | Network adapter 1 | Intel PRO/1000 MT Desktop, NAT for initial setup/activation/updates |
 
-The WIN11-01 screenshots verify successful graphical sign-in and About Windows identifies Windows 11 Enterprise Evaluation, version 26H2, OS build 26300.9457. Settings verifies labadmin as a Local Account, Activation state Active, and device name WIN11-01. LabNet connectivity and the client baseline snapshot remain unverified. Client updates are deferred at the lab owner's request; no patch-completion claim is made. The client will be moved to the isolated lab network after the baseline snapshot.
+The WIN11-01 screenshots verify successful graphical sign-in and About Windows identifies Windows 11 Enterprise Evaluation, version 26H2, OS build 26300.9457. Settings verifies labadmin as a Local Account, Activation state Active, and device name WIN11-01. The client baseline snapshot exists; LabNet connectivity remains unverified. Client updates are deferred at the lab owner's request; no patch-completion claim is made. The client will be moved to the isolated lab network next.
 
 ## Verified setup steps
 
@@ -76,10 +78,11 @@ The WIN11-01 screenshots verify successful graphical sign-in and About Windows i
 - Windows computer name: Server Manager > Local Server screenshot shows Computer name DC01 and Workgroup WORKGROUP. This verifies the hostname; it does not establish an Active Directory domain or domain controller.
 - Static IPv4: guest ipconfig /all shows hostname DC01, IPv4 10.10.10.10 (Preferred), subnet mask 255.255.255.0, DHCP Enabled No, DNS Servers 10.10.10.10, and an empty Default Gateway. IPv6 remains enabled with a link-local address. This verifies local configuration, not network reachability.
 - Client installation/sign-in: screenshot with title WIN11-01 [Running] shows the graphical desktop and Windows 11 Enterprise Evaluation watermark. This verifies installation of an eligible client edition; no domain join is claimed.
-- Client identity/activation: guest Settings screenshots show labadmin Local Account, Windows 11 Enterprise Evaluation Activation state Active, and device name WIN11-01. No AD domain membership or client baseline snapshot is claimed.
+- Client identity/activation: guest Settings screenshots show labadmin Local Account, Windows 11 Enterprise Evaluation Activation state Active, and device name WIN11-01. No AD domain membership is claimed.
+- Client recovery checkpoint: snapshot tree shows `01-Clean-Client-Install` with Current State beneath it, and both lab VMs Powered Off. Restoration is untested.
 
 ## Outstanding initial setup
 
-A Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation activation state is Active. The lab owner subsequently reported that DC01 finished updating; a final Windows Update page, pending-restart status, and post-update build were not independently inspected. Temporary NAT/automatic-address maintenance was instructed, and the learner supplied a Microsoft website screenshot as a connectivity check; exact temporary server adapter settings were not captured. Client activation is now verified Active. Take a client baseline snapshot, then restore and verify Internal Network LabNet and DC01's static settings above. Client updates are deferred at the lab owner's request. Keep Windows Firewall enabled and port-forwarding rules empty.
+A Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation activation state is Active. The lab owner subsequently reported that DC01 finished updating; a final Windows Update page, pending-restart status, and post-update build were not independently inspected. Temporary NAT/automatic-address maintenance was instructed, and the learner supplied a Microsoft website screenshot as a connectivity check; exact temporary server adapter settings were not captured. Client activation and both baseline snapshots are now verified. Next restore and verify Internal Network LabNet and DC01's static settings above, then configure client addressing and test connectivity. Client updates are deferred at the lab owner's request. Keep Windows Firewall enabled and port-forwarding rules empty.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
