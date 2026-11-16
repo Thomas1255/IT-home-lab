@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: Windows Server 2025 Standard Evaluation with Desktop Experience installed and first sign-in verified in screenshots. DC01 uses Internal Network LabNet. Guest addressing, Active Directory, and client deployment remain pending.
+Status: Windows Server 2025 Standard Evaluation with Desktop Experience installed and first sign-in verified in screenshots. DC01 uses Internal Network LabNet with static IPv4 settings verified below. Activation, updates, Active Directory, client deployment, and inter-VM connectivity remain pending.
 
 ## Host inventory
 
@@ -33,8 +33,12 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 | Optical drive | Windows Server 2025 evaluation x64 ISO attached |
 | VirtualBox OS profile | Windows Server 2022 (64-bit); this profile does not identify an installed OS |
 | Network adapter 1 | Intel PRO/1000 MT Desktop, Internal Network named LabNet |
+| Guest IPv4 / subnet mask | 10.10.10.10 / 255.255.255.0 |
+| DHCP enabled | No |
+| Default gateway | None |
+| Preferred DNS | 10.10.10.10; local DNS service not yet installed |
 
-The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing and connectivity remain unverified.
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. A pre-installation screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. A later guest ipconfig /all screenshot verifies the static IPv4 address, mask, DNS, DHCP disabled, and no gateway. Inter-VM connectivity and DNS service operation remain unverified.
 
 ## Recovery checkpoint
 
@@ -50,9 +54,10 @@ The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server
 - Edition verification: About Windows identifies Windows Server 2025 Standard Evaluation, version 24H2, OS build 26100.32230. The graphical desktop confirms Desktop Experience. Passwords were not collected or recorded.
 - Recovery checkpoint: `01-Clean-Server-Install` exists in the VirtualBox snapshot tree, verified by screenshot. Restore testing is not claimed.
 - Windows computer name: Server Manager > Local Server screenshot shows Computer name DC01 and Workgroup WORKGROUP. This verifies the hostname; it does not establish an Active Directory domain or domain controller.
+- Static IPv4: guest ipconfig /all shows hostname DC01, IPv4 10.10.10.10 (Preferred), subnet mask 255.255.255.0, DHCP Enabled No, DNS Servers 10.10.10.10, and an empty Default Gateway. IPv6 remains enabled with a link-local address. This verifies local configuration, not network reachability.
 
 ## Outstanding initial setup
 
-The latest Server Manager screenshot shows DHCP-enabled IPv4 configuration, Windows not activated, and no recorded update checks or installed updates in that view. Exact IP configuration, successful activation, and servicing remain to be verified before Active Directory setup.
+A previous Server Manager screenshot showed Windows not activated and no recorded update checks or installed updates in that view. Activation and servicing remain to be completed and verified before Active Directory setup. A temporary switch to NAT and automatic guest IP/DNS addressing is planned for maintenance, followed by restoration and verification of Internal Network LabNet and the static settings above. This maintenance switch has not yet been performed or verified.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
