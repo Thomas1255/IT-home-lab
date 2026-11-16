@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: DC01 VM created and powered off, as verified in the lab owner's screenshot. Windows Server installation and isolated networking are pending.
+Status: DC01 VM created and its adapter set to Internal Network LabNet, as verified in the lab owner's screenshots. Windows Server installation and guest network addressing are pending.
 
 ## Host inventory
 
@@ -29,14 +29,15 @@ Oracle VirtualBox is the hypervisor. The following DC01 settings were verified i
 | Virtual disk | DC01.vdi, 80 GB; full preallocation unchecked in the creation wizard |
 | Optical drive | Windows Server 2025 evaluation x64 ISO attached |
 | VirtualBox OS profile | Windows Server 2022 (64-bit); this profile does not identify an installed OS |
-| Network adapter 1 | Intel PRO/1000 MT Desktop, NAT; isolation pending |
+| Network adapter 1 | Intel PRO/1000 MT Desktop, Internal Network named LabNet |
 
-The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. Planned next change: set the only enabled adapter to Internal Network named LabNet before first boot. This change is not yet verified.
+The ISO was downloaded and used from its existing location outside the Git checkout. The VM files are also outside the checkout. The latest screenshot shows only adapter 1 in the network summary, attached to Internal Network named LabNet. Guest IP addressing, connectivity, and Windows Server installation remain unverified.
 
 ## Verified setup steps
 
 - Oracle VirtualBox installation: lab owner reported installation complete; executable version inspected separately.
 - Windows Server evaluation ISO download: confirmed by the lab owner and attached image visible in the DC01 storage summary.
 - DC01 creation: screenshots show the registered, powered-off VM with the resources listed above. No Windows installation or boot success is claimed.
+- DC01 network attachment: screenshot verifies adapter 1 uses Internal Network LabNet. No guest IP configuration or connectivity is claimed.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
