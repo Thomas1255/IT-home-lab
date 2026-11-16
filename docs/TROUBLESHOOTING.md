@@ -1,5 +1,13 @@
 # Troubleshooting Knowledge Base
 
+## DNS Manager shows no forward zones after promotion (open)
+
+- **Observed:** ADUC lists ad.northstar.example and DC01 as a GC domain controller, while DNS Manager's Forward Lookup Zones view is empty.
+- **Unknown:** Whether zones are absent, not loaded yet, or the console is stale. No root cause or fix established.
+- **Next diagnostics:** Refresh the console; if still empty, inspect Get-DnsServerZone and DNS/Netlogon service status inside DC01. Startup-related AD-integrated zone loading delay is a possibility, not a diagnosis.
+- **Scope:** Do not create new zones, demote/re-promote the DC, or join the client until evidence identifies the issue.
+- **Evidence:** [Domain controller and empty DNS view](EVIDENCE.md#active-directory-promotion-and-dns-investigation).
+
 ## VirtualBox VM creation blocked by a non-unique path
 
 - **Symptoms:** The New Virtual Machine wizard initially did not complete when Finish was clicked. A later screenshot showed a red VM Name field and disabled Finish button.

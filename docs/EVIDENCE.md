@@ -1,5 +1,15 @@
 # Screenshot Evidence
 
+## Active Directory promotion and DNS investigation
+
+AD Users and Computers shows `ad.northstar.example`, with `DC01` under Domain Controllers and DC Type `GC`. This verifies domain/DC presence, not full DNS health.
+
+![Active Directory domain and DC01 Global Catalog](images/ad-domain-controller.png)
+
+The DNS Manager Forward Lookup Zones view currently shows no zones. Cause and resolution remain under investigation; zone creation is not claimed.
+
+![Empty DNS forward lookup zones view](images/dns-zones-empty.png)
+
 Selected screenshots supplied by the lab owner, reviewed before publication. They show lab machines, fictional/local account names, and private lab addressing. Activation-page screenshots with product identifiers, host personal paths, and unrelated application views are omitted. Images are original screenshots, not recreated outputs. Capture timestamps are not used to infer task order or completion dates.
 
 ## Windows Server installation

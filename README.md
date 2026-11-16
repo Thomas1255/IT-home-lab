@@ -4,7 +4,7 @@ A hands-on IT support lab for a fictional company of approximately 25 employees.
 
 ## Current status
 
-DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both active VirtualBox adapters use the isolated Internal Network LabNet; screenshots verify static addresses 10.10.10.10/24 and 10.10.10.20/24, respectively. After troubleshooting DC01's duplicate-address state, ping tests initiated from each VM succeed with 4/4 replies and 0% loss. DC01 updates are complete by the lab owner's report; client updates are deferred. Active Directory is not configured yet.
+DC01 and WIN11-01 are installed and activated, with baseline snapshots. Both active VirtualBox adapters use the isolated Internal Network LabNet; screenshots verify static addresses 10.10.10.10/24 and 10.10.10.20/24, respectively. After troubleshooting DC01's duplicate-address state, ping tests initiated from each VM succeed with 4/4 replies and 0% loss. DC01 updates are complete by the lab owner's report; client updates are deferred. Active Directory Users and Computers now shows ad.northstar.example with DC01 as a Global Catalog domain controller. DNS verification is in progress: DNS Manager currently shows no forward lookup zones. Client domain join is pending.
 
 ## Planned technologies
 

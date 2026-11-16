@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: DC01 and WIN11-01 are installed, graphical sign-in and Active activation states are verified in screenshots, and both Windows computer names match their VM names. Baseline snapshots exist for both VMs. Server update completion is reported by the lab owner; client updates are deferred at the lab owner's request. Both adapters are now verified on isolated LabNet, and static addresses are verified. Ping tests in both directions are verified with 0% loss; Active Directory and DNS services remain pending.
+Status: Both VMs and isolated IP connectivity are verified. AD Users and Computers shows ad.northstar.example with DC01 as a Global Catalog domain controller. DNS Manager shows an empty Forward Lookup Zones view; DNS health and client domain join remain pending.
 
 ## Host inventory
 
@@ -23,7 +23,7 @@ Oracle VirtualBox is the hypervisor. The following DC01 lab settings were verifi
 | Setting | Observed value |
 | --- | --- |
 | VirtualBox VM name | DC01 |
-| Windows computer name / membership | DC01 / WORKGROUP, verified in Server Manager |
+| Windows computer name / membership | DC01 / ad.northstar.example, verified in AD Users and Computers after promotion |
 | Installed operating system | Windows Server 2025 Standard Evaluation with Desktop Experience |
 | Installed version/build | 24H2, OS build 26100.32230, verified using winver |
 | Memory | 6144 MB |
@@ -89,5 +89,11 @@ A Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation ac
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
 
 ## Restored lab addressing and connectivity evidence
+
+## Active Directory promotion checkpoint
+
+AD Users and Computers screenshot verifies the domain `ad.northstar.example` and the computer `DC01` in the Domain Controllers OU, with DC Type `GC`. Server Manager also shows AD DS and DNS role pages. Final functional levels, NetBIOS name, pre-promotion snapshot, and promotion wizard settings were not independently inspected. Domain-controller presence is verified; overall AD/DNS health is not yet established.
+
+DNS Manager's Forward Lookup Zones view on DC01 currently shows no zones and offers Add a New Zone. This establishes an empty console view, not the cause or proof of deletion. Refresh and read-only DNS zone/service queries are the next diagnostic steps; do not create replacement zones or join the client before diagnosis. See [evidence](EVIDENCE.md#active-directory-promotion-and-dns-investigation).
 
 Current VirtualBox XML inspection verifies both active adapter 1 attachments use Internal Network LabNet and distinct MAC addresses. Guest screenshots verify both static addresses and DNS settings. The server address was temporarily marked Duplicate, but a later screenshot shows Preferred and DC01 pinging WIN11-01 successfully (4/4 replies, 0% loss). Client firewall rules were configured by learner report; exact contents are not independently inspected. New screenshots verify both DC01 pinging 10.10.10.20 and WIN11-01 pinging 10.10.10.10, each with 4/4 replies and 0% loss. The earlier self-ping was not counted as remote verification. See [screenshot evidence](EVIDENCE.md) and [troubleshooting record](TROUBLESHOOTING.md).
