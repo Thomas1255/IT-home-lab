@@ -1,6 +1,6 @@
 # Setup Record
 
-Status: Windows Server 2025 Standard Evaluation with Desktop Experience installed and first sign-in verified in screenshots. DC01 uses Internal Network LabNet with static IPv4 settings verified below. Activation, updates, Active Directory, client deployment, and inter-VM connectivity remain pending.
+Status: DC01 is installed and activation is verified Active. Server updates were last observed downloading during temporary internet maintenance. WIN11-01 has been created with its client ISO attached; Windows 11 installation has not yet been verified. Restored lab isolation, completed updates, Active Directory, and inter-VM connectivity remain pending.
 
 ## Host inventory
 
@@ -18,7 +18,7 @@ Oracle VirtualBox is installed, as confirmed by the lab owner. Read-only inspect
 
 ## Lab design
 
-Oracle VirtualBox is the hypervisor. The following DC01 settings were verified in the lab owner's screenshots:
+Oracle VirtualBox is the hypervisor. The following DC01 lab settings were verified in the lab owner's screenshots; network settings are to be restored after temporary internet maintenance:
 
 | Setting | Observed value |
 | --- | --- |
@@ -44,6 +44,22 @@ The ISO was downloaded and used from its existing location outside the Git check
 
 The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server-Install`, with Current State beneath it, after Windows installation and edition verification. Snapshot restoration has not been tested.
 
+## Windows 11 workstation preparation
+
+The learner downloaded the client ISO. A VirtualBox Manager screenshot verifies the new VM's configuration:
+
+| Setting | Observed value |
+| --- | --- |
+| VirtualBox VM name | WIN11-01; installed Windows computer name not yet established |
+| OS profile | Windows 11 (64-bit) |
+| Memory / virtual processors | 8192 MB / 2 |
+| Disk | WIN11-01.vdi, 80 GB |
+| Firmware / security | EFI enabled, TPM 2.0, Secure Boot enabled |
+| Optical drive | Client Enterprise Evaluation x64 English ISO, filename includes CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us |
+| Network adapter 1 | Intel PRO/1000 MT Desktop, NAT for initial setup/activation/updates |
+
+No Windows 11 boot, installation, sign-in, activation, updates, or LabNet connectivity is claimed yet. The client will be moved to the isolated lab network after initial maintenance.
+
 ## Verified setup steps
 
 - Oracle VirtualBox installation: lab owner reported installation complete; executable version inspected separately.
@@ -58,6 +74,6 @@ The lab owner's screenshot verifies a VirtualBox snapshot named `01-Clean-Server
 
 ## Outstanding initial setup
 
-A previous Server Manager screenshot showed Windows not activated and no recorded update checks or installed updates in that view. Activation and servicing remain to be completed and verified before Active Directory setup. A temporary switch to NAT and automatic guest IP/DNS addressing is planned for maintenance, followed by restoration and verification of Internal Network LabNet and the static settings above. This maintenance switch has not yet been performed or verified.
+A later Settings screenshot verifies DC01's Windows Server 2025 Standard Evaluation activation state is Active. Its Windows Update screenshot shows several downloads in progress and a completed security-platform update; the overall servicing cycle and pending restarts remain unverified. Temporary NAT/automatic-address maintenance was instructed, and the learner supplied a Microsoft website screenshot as a connectivity check; exact temporary adapter settings were not captured. Restore and verify Internal Network LabNet and the static settings above after maintenance. Keep Windows Firewall enabled and port-forwarding rules empty.
 
 Completed configurations and their verification results will be documented here. Passwords and product keys are excluded.
