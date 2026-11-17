@@ -34,3 +34,7 @@ Follow-up screenshot evidence verifies five user objects in each of IT, HR, Fina
 Security-group creation checkpoint: five security groups are visible in Northstar/Groups. Scope and the truncated Operations name await command verification. Membership assignment and access grants remain pending. See the [group screenshot](images/department-security-groups.png).
 
 Membership verification is complete: GG_IT, GG_HR, GG_Finance, GG_Sales, and GG_Operations are Global Security groups, each with the correct five department accounts. The full Operations name is confirmed. See [membership evidence](images/department-memberships.png). Resource permissions and client domain sign-in remain unverified; DNS is unresolved.
+
+## Account support practice
+
+Alex Morgan's password reset succeeded in ADUC. Read-only verification shows the account enabled, pwdLastSet=0, and LockedOut=False. Password change at next logon is required. No actual locked-account recovery or client sign-in is claimed. See the [reset evidence](EVIDENCE.md#password-reset-verification).

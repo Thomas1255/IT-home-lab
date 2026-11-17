@@ -109,3 +109,11 @@ ADUC screenshot verifies five security-group objects in Northstar/Groups. Financ
 PowerShell output verifies GG_IT, GG_HR, GG_Finance, GG_Sales, and GG_Operations each have Global scope, Security category, and exactly five matching department users. All 25 expected employees are accounted for. Group membership does not itself prove resource permissions or successful domain sign-in.
 
 ![Verified group scopes and department memberships](images/department-memberships.png)
+
+## Password reset verification
+
+ADUC confirms Alex Morgan's password was changed. A subsequent Get-ADUser query shows Enabled=True, pwdLastSet=0 (password change required at next logon), and LockedOut=False. No password is shown. This verifies the reset and account flags; an actual lockout/unlock and client sign-in have not been demonstrated.
+
+![Password reset confirmation](images/password-reset-confirmation.png)
+
+![Password reset account flags](images/password-reset-verification.png)
