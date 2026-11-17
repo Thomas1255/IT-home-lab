@@ -28,3 +28,5 @@ DNS remains unresolved: automatic and manual domain-zone creation fail with Win3
 The learner supplied Get-ADUser output scoped to OU=Users,OU=Northstar,DC=ad,DC=northstar,DC=example showing 25 unique employee accounts, all Enabled=True. This verifies the count, account names, and enabled state within that subtree. The displayed output does not independently verify individual department placement, password settings, or successful sign-in.
 
 One display name is Isabelle Ross with logon isabella.ross; this is a naming difference from the proposed Isabella Ross, not a demonstrated authentication failure. Security groups and memberships remain pending. DNS remains unresolved.
+
+Follow-up screenshot evidence verifies five user objects in each of IT, HR, Finance, Sales, and Operations. Department placement is now verified in the [evidence gallery](EVIDENCE.md#employee-department-placement). Security-group creation and membership remain unverified.

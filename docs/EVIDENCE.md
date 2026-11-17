@@ -83,3 +83,17 @@ This historical client screenshot shows the failed ping to the server followed b
 The screenshot verifies Northstar contains Groups, Users, and Workstations, with IT, HR, Finance, Sales, and Operations beneath Users. It does not verify accounts, security groups, domain joining, or DNS recovery.
 
 ![Verified department OU tree](images/department-ous.png)
+
+## Employee department placement
+
+Five ADUC screenshots now verify five user objects in each department OU under Northstar/Users. Some long names are visually truncated; the earlier PowerShell output supplies their full names and enabled state. These screenshots verify OU placement, not security-group membership or password flags.
+
+![Five IT users](images/employees-it.png)
+
+![Five HR users](images/employees-hr.png)
+
+![Five Finance users](images/employees-finance.png)
+
+![Five Sales users](images/employees-sales.png)
+
+![Five Operations users](images/employees-operations.png)
