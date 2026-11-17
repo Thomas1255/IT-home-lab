@@ -103,3 +103,9 @@ Five ADUC screenshots now verify five user objects in each department OU under N
 ADUC screenshot verifies five security-group objects in Northstar/Groups. Finance, HR, IT, and Sales names are visible; the Operations name is truncated. Scope and full Operations name will be checked with membership verification. Membership and access permissions are not yet verified.
 
 ![Department security groups](images/department-security-groups.png)
+
+## Verified department memberships
+
+PowerShell output verifies GG_IT, GG_HR, GG_Finance, GG_Sales, and GG_Operations each have Global scope, Security category, and exactly five matching department users. All 25 expected employees are accounted for. Group membership does not itself prove resource permissions or successful domain sign-in.
+
+![Verified group scopes and department memberships](images/department-memberships.png)

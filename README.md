@@ -46,3 +46,5 @@ The [Northstar directory design](docs/DIRECTORY.md) and department OUs are docum
 Employee checkpoint: 25 enabled accounts are verified by learner-supplied PowerShell output scoped to Northstar/Users. Department placement and password flags were not shown in that output; security groups and memberships remain pending.
 
 Follow-up department screenshots now verify five users in each department OU; see the [employee placement evidence](docs/EVIDENCE.md#employee-department-placement). Group creation and membership remain pending verification.
+
+Department groups and memberships are now verified: five Global Security groups, each containing its five department employees. See the [membership evidence](docs/EVIDENCE.md#verified-department-memberships). DNS and client joining remain unresolved/pending.

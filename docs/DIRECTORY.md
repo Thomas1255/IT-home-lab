@@ -32,3 +32,5 @@ One display name is Isabelle Ross with logon isabella.ross; this is a naming dif
 Follow-up screenshot evidence verifies five user objects in each of IT, HR, Finance, Sales, and Operations. Department placement is now verified in the [evidence gallery](EVIDENCE.md#employee-department-placement). Security-group creation and membership remain unverified.
 
 Security-group creation checkpoint: five security groups are visible in Northstar/Groups. Scope and the truncated Operations name await command verification. Membership assignment and access grants remain pending. See the [group screenshot](images/department-security-groups.png).
+
+Membership verification is complete: GG_IT, GG_HR, GG_Finance, GG_Sales, and GG_Operations are Global Security groups, each with the correct five department accounts. The full Operations name is confirmed. See [membership evidence](images/department-memberships.png). Resource permissions and client domain sign-in remain unverified; DNS is unresolved.
