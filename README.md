@@ -38,3 +38,7 @@ WIN11-01 also successfully pings DC01 with 0% loss:
 ## Lab practices
 
 Use fictional employee data and an isolated lab network. Avoid exposing lab services to the internet and take VM snapshots before risky changes. Documentation will record completed work and verification results. Portfolio material must exclude credentials, license keys, and personal information.
+
+## Directory structure checkpoint
+
+The [Northstar directory design](docs/DIRECTORY.md) and department OUs are documented and screenshot-verified. Employee accounts and security groups are next. A clean server rollback and repeat promotion did not resolve DNS: zone creation fails with error 123. Earlier server activation/update claims above describe the pre-rollback installation and have not been reverified after restoration. Client domain joining remains deferred.

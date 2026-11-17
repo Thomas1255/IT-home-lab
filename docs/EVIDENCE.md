@@ -77,3 +77,9 @@ The new client screenshot shows ping 10.10.10.10 receiving four replies from DC0
 This historical client screenshot shows the failed ping to the server followed by a successful ping to its own address 10.10.10.20. The self-ping verified local response only; the subsequent remote test above now supplies the missing client-to-server evidence.
 
 ![Client self-ping and earlier failed remote test](images/client-self-ping.png)
+
+## Department organizational units
+
+The screenshot verifies Northstar contains Groups, Users, and Workstations, with IT, HR, Finance, Sales, and Operations beneath Users. It does not verify accounts, security groups, domain joining, or DNS recovery.
+
+![Verified department OU tree](images/department-ous.png)
