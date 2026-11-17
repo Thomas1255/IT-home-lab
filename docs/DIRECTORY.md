@@ -30,3 +30,5 @@ The learner supplied Get-ADUser output scoped to OU=Users,OU=Northstar,DC=ad,DC=
 One display name is Isabelle Ross with logon isabella.ross; this is a naming difference from the proposed Isabella Ross, not a demonstrated authentication failure. Security groups and memberships remain pending. DNS remains unresolved.
 
 Follow-up screenshot evidence verifies five user objects in each of IT, HR, Finance, Sales, and Operations. Department placement is now verified in the [evidence gallery](EVIDENCE.md#employee-department-placement). Security-group creation and membership remain unverified.
+
+Security-group creation checkpoint: five security groups are visible in Northstar/Groups. Scope and the truncated Operations name await command verification. Membership assignment and access grants remain pending. See the [group screenshot](images/department-security-groups.png).

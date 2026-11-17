@@ -97,3 +97,9 @@ Five ADUC screenshots now verify five user objects in each department OU under N
 ![Five Sales users](images/employees-sales.png)
 
 ![Five Operations users](images/employees-operations.png)
+
+## Department security groups
+
+ADUC screenshot verifies five security-group objects in Northstar/Groups. Finance, HR, IT, and Sales names are visible; the Operations name is truncated. Scope and full Operations name will be checked with membership verification. Membership and access permissions are not yet verified.
+
+![Department security groups](images/department-security-groups.png)
