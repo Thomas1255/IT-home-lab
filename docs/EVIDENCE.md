@@ -117,3 +117,11 @@ ADUC confirms Alex Morgan's password was changed. A subsequent Get-ADUser query 
 ![Password reset confirmation](images/password-reset-confirmation.png)
 
 ![Password reset account flags](images/password-reset-verification.png)
+
+## Account suspension verification
+
+ADUC confirms Jamie Chen was disabled. Get-ADUser then reports Enabled=False. Re-enabling the account remains pending verification. This demonstrates account suspension, not an account lockout or unlock.
+
+![Account disabled confirmation](images/account-disabled-confirmation.png)
+
+![Disabled state verified](images/account-disabled-verification.png)
