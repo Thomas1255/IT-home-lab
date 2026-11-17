@@ -42,3 +42,5 @@ Use fictional employee data and an isolated lab network. Avoid exposing lab serv
 ## Directory structure checkpoint
 
 The [Northstar directory design](docs/DIRECTORY.md) and department OUs are documented and screenshot-verified. Employee accounts and security groups are next. A clean server rollback and repeat promotion did not resolve DNS: zone creation fails with error 123. Earlier server activation/update claims above describe the pre-rollback installation and have not been reverified after restoration. Client domain joining remains deferred.
+
+Employee checkpoint: 25 enabled accounts are verified by learner-supplied PowerShell output scoped to Northstar/Users. Department placement and password flags were not shown in that output; security groups and memberships remain pending.
