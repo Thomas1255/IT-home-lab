@@ -125,3 +125,11 @@ ADUC confirms Jamie Chen was disabled. Get-ADUser then reports Enabled=False. Re
 ![Account disabled confirmation](images/account-disabled-confirmation.png)
 
 ![Disabled state verified](images/account-disabled-verification.png)
+
+## Account reactivation verification
+
+ADUC confirms Jamie Chen was enabled again. Get-ADUser reports Enabled=True. Together with the earlier disabled-state evidence, this verifies the disable/re-enable exercise. Actual locked-account recovery and client sign-in remain unverified.
+
+![Account enabled confirmation](images/account-enabled-confirmation.png)
+
+![Enabled state verified](images/account-enabled-verification.png)
