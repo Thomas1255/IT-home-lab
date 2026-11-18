@@ -38,3 +38,5 @@ Membership verification is complete: GG_IT, GG_HR, GG_Finance, GG_Sales, and GG_
 ## Account support practice
 
 Alex Morgan's password reset succeeded in ADUC. Read-only verification shows the account enabled, pwdLastSet=0, and LockedOut=False. Password change at next logon is required. No actual locked-account recovery or client sign-in is claimed. See the [reset evidence](EVIDENCE.md#password-reset-verification).
+
+Account lifecycle verification now includes an actual three-attempt lockout and GUI unlock for Jamie Chen, followed by Enabled=True and LockedOut=False. Password reset and disable/re-enable exercises were also verified. The Jamie-only temporary practice password policy still needs removal. See the [lockout evidence](EVIDENCE.md#verified-account-lockout-and-recovery). DNS and client sign-in remain unresolved/unverified.

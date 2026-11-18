@@ -133,3 +133,15 @@ ADUC confirms Jamie Chen was enabled again. Get-ADUser reports Enabled=True. Tog
 ![Account enabled confirmation](images/account-enabled-confirmation.png)
 
 ![Enabled state verified](images/account-enabled-verification.png)
+
+## Verified account lockout and recovery
+
+A temporary fine-grained password policy assigned to Jamie Chen set a three-attempt threshold and ten-minute lockout. The domain default threshold was zero. The controlled test shows LockedOut=False after attempts one and two, then True after attempt three. The visible test password is deliberately incorrect, not a real credential.
+
+![Lockout on third failed attempt](images/account-lockout-test.png)
+
+ADUC shows the account locked and the Unlock account option selected. The subsequent query verifies Enabled=True and LockedOut=False. This completes the lockout/recovery exercise alongside the earlier password reset and disable/re-enable tests. Temporary policy removal remains pending; successful client sign-in is not verified.
+
+![Unlock through ADUC](images/account-unlock-gui.png)
+
+![Unlocked enabled account verified](images/account-unlock-verification.png)
