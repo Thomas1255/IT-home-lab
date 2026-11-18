@@ -151,3 +151,9 @@ ADUC shows the account locked and the Unlock account option selected. The subseq
 The filtered query returns no Lab-Unlock-Practice policy, and Jamie Chen remains Enabled=True and LockedOut=False. The screenshot also shows a Y entered at the normal PowerShell prompt (not a pending confirmation) and a redundant removal attempt reporting the policy absent. Cleanup is verified by the final queries.
 
 ![Practice policy absent and account enabled/unlocked](images/practice-policy-cleanup.png)
+
+## Department SMB shares
+
+Get-SmbShare verifies IT, HR, Finance, Sales, and Operations map to their corresponding folders under C:\LabShares. Get-SmbShareAccess verifies each share grants BUILTIN\Administrators Allow Full and its matching NORTHSTAR\GG_department group Allow Change. Everyone is absent from the displayed ACLs. NTFS permissions and employee access/denied-access tests remain pending.
+
+![Verified department share paths and permissions](images/department-share-verification.png)
