@@ -145,3 +145,9 @@ ADUC shows the account locked and the Unlock account option selected. The subseq
 ![Unlock through ADUC](images/account-unlock-gui.png)
 
 ![Unlocked enabled account verified](images/account-unlock-verification.png)
+
+## Temporary policy cleanup
+
+The filtered query returns no Lab-Unlock-Practice policy, and Jamie Chen remains Enabled=True and LockedOut=False. The screenshot also shows a Y entered at the normal PowerShell prompt (not a pending confirmation) and a redundant removal attempt reporting the policy absent. Cleanup is verified by the final queries.
+
+![Practice policy absent and account enabled/unlocked](images/practice-policy-cleanup.png)
