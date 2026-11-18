@@ -27,3 +27,7 @@
 - **Final verification:** New screenshots show DC01 pinging 10.10.10.20 and WIN11-01 pinging 10.10.10.10; both tests return 4/4 replies with 0% loss. The earlier client self-ping was not accepted as remote verification. IP reachability is now verified in both directions; DNS and domain services are still untested.
 - **Root cause:** Unconfirmed. Windows reported a conflict; do not assume a second device, firewall problem, or ISO issue without evidence.
 - **Evidence:** [Screenshots and verification limits](EVIDENCE.md#troubleshooting-duplicate-address-and-failed-reachability).
+
+## Diagnostic command understanding
+
+The learner explained that hostname confirms the device being operated, Get-SmbSession identifies server-side connections, and icacls Modify permits document changes without the permission-management rights of Full Control. The SMB exercise specifically used ClientUserName to confirm the authenticated account, while net use showed client connections. These explanations accompany the earlier command outputs and allowed/denied access evidence.
