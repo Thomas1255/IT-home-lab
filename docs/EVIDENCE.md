@@ -157,3 +157,19 @@ The filtered query returns no Lab-Unlock-Practice policy, and Jamie Chen remains
 Get-SmbShare verifies IT, HR, Finance, Sales, and Operations map to their corresponding folders under C:\LabShares. Get-SmbShareAccess verifies each share grants BUILTIN\Administrators Allow Full and its matching NORTHSTAR\GG_department group Allow Change. Everyone is absent from the displayed ACLs. NTFS permissions and employee access/denied-access tests remain pending.
 
 ![Verified department share paths and permissions](images/department-share-verification.png)
+
+## Verified share and NTFS permissions
+
+All five department folders have explicit Administrators and SYSTEM Full Control, CREATOR OWNER inheritable child permissions, and their matching department group Modify on the folder, subfolders, and files. Broad Users entries are absent in the displayed ACLs.
+
+![Department NTFS ACL verification](images/department-ntfs-verification.png)
+
+On WIN11-01, an explicit NORTHSTAR\jamie.chen connection to the IT share succeeds. Creating and reading jamie-access-test.txt succeeds. An HR mapping command also reports success, so that command alone was not used as proof of data access.
+
+![IT write and read test on WIN11-01](images/it-share-write-read.png)
+
+The subsequent dir Y:\ on WIN11-01 returns Access is denied. DC01's SMB session listing confirms client 10.10.10.20 uses NORTHSTAR\jamie.chen. This verifies allowed IT file access and denied HR directory listing for the same employee identity. It does not verify every department pair or client domain sign-in. DNS remains unresolved; these tests used the server IP.
+
+![HR directory access denied](images/hr-share-access-denied.png)
+
+![Server confirms SMB client identity](images/smb-session-identity.png)
