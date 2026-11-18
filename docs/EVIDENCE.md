@@ -173,3 +173,11 @@ The subsequent dir Y:\ on WIN11-01 returns Access is denied. DC01's SMB session 
 ![HR directory access denied](images/hr-share-access-denied.png)
 
 ![Server confirms SMB client identity](images/smb-session-identity.png)
+
+## Workstation policy creation and linking
+
+Screenshots verify Northstar - Workstation Security has a defined 900-second machine inactivity limit and an enabled link on Northstar/Workstations. Client policy application and actual automatic locking are not yet verified.
+
+![GPO inactivity setting](images/gpo-inactivity-900.png)
+
+![Workstations GPO link](images/gpo-workstations-link.png)
